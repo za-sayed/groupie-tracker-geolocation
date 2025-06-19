@@ -1,0 +1,92 @@
+/* Resetting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Body Styling */
+html, body {
+    height: 100vh; /* Set height to 100vh for full viewport height */
+}
+
+body {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, #7e1b2e, #63163c, #42193f, #211836, #071125);
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+}
+
+.content {
+    width: 650px; /* Fixed width */
+    max-width: 90%; /* Responsive width */
+    height: auto; /* Allow auto height for content */
+    min-height: 300px; /* Minimum height to ensure it looks good */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.to-artists-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(to right bottom, #c5c5c5, #6495ED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Courgette", cursive;
+    margin-top: 25px; /* Space above the link */
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.to-artists-link .arrow {
+    font-size: 1.3rem;
+    margin-left: 8px;
+    background: linear-gradient(to right bottom, #c5c5c5, #6495ED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.to-artists-link:hover {
+    font-size: 1.4rem;
+    transform: scale(1.1);
+}

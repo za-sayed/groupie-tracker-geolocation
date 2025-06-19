@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/style/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Welcome</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/Artists"><img src="/static/image/logo.png" alt="Groupie Tracker Logo" class="logo-icon"></a>
+            <span class="logo-text">Groupie-Tracker</span>
+        </div>
+        <nav class="nav-links">
+            <a href="/" id="homeLink">Home</a>
+            <a href="/Artists" id="artistsLink">Artists</a>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search..." class="search-bar">
+            <i class="fa fa-search"></i>
+        </div>
+    </header>
+
+    <main>
+        <h2>Welcome to Groupie Tracker</h2>
+        <p>
+            Explore your favorite artists and bands with ease. Our platform provides detailed artist profiles, concert dates, and venue locations—all connected for your convenience. Dive into dynamic visualizations and stay up-to-date with the latest music events.
+        <br>
+            Let Groupie Tracker guide you through the vibrant world of live music!
+        </p>
+        <a href="/Artists" class="to-artists-link">
+            Let's Start
+            <span class="arrow">→</span>
+        </a>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current URL path
+            const path = window.location.pathname;
+
+            // Select the navigation links
+            const homeLink = document.getElementById("homeLink");
+            const artistsLink = document.getElementById("artistsLink");
+
+            // Add 'active' class based on current URL
+            if (path === "/") {
+                homeLink.classList.add("active"); // Add active class to Home link
+            } else if (path === "/Artists") {
+                artistsLink.classList.add("active"); // Add active class to Artists link
+            }
+        });
+    </script>
+</body>
+</html>

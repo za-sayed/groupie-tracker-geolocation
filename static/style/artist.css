@@ -1,0 +1,350 @@
+/* Resetting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Body Styling */
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: linear-gradient(to right bottom, #7e1b2e, #63163c, #42193f, #211836, #071125);
+    color: #e0e1e3;
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 25px;
+    background: linear-gradient(to right bottom, #c5c5c5, #6495ED); 
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Updated Navigation Links */
+.nav-links a {
+    text-decoration: none;
+    font-size: 22px; /* Font size */
+    padding: 8px 15px 3px; /* Consistent padding */
+    background: linear-gradient(to right bottom, #c5c5c5, #6495ED); 
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    border-radius: 20px;
+    transition: background 0.3s ease; /* Only transition background */
+    position: relative;
+}
+
+/* No Hover or Focus Effects for Non-Active Links */
+.nav-links a:not(.active):hover,
+.nav-links a:not(.active):focus {
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+/* Underline Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Position of the underline */
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    border-radius: 2px; /* Round corners for the underline */
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    transform: scaleX(0); /* Start with no underline */
+    transform-origin: bottom right; /* Origin for scaling */
+    transition: transform 0.3s ease; /* Transition only for the underline */
+}
+
+.nav-links a:hover:not(.active)::after,
+.nav-links a:focus:not(.active)::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+    transform-origin: bottom left; /* Start from the left */
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    position: relative;
+    background: linear-gradient(to right bottom, #c5c5c5, #6495ED); /* Active link background */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Underline Effect for Active Link */
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px; /* Position of the underline for active link */
+    height: 2px; /* Thickness of the underline */
+    background: linear-gradient(to right bottom, #c5c5c5, #6495ED); /* Active underline */
+    border-radius: 2px; /* Round corners for the underline */
+    transform: scaleX(1); /* Fully stretched underline */
+    transition: transform 0.3s ease; /* Transition for the underline only */
+}
+
+/* Sleeker Search Bar */
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.search-bar {
+    padding: 10px 40px 10px 20px; /* Increased right padding for comfort */
+    border-radius: 25px; /* Keep it rounded */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    outline: none;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    color: #e0e1e3; /* Match with the text color of the page */
+    font-size: 1em;
+    font-family: "Courgette", cursive; /* Ensure the font matches your design */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Placeholder style */
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Softer placeholder color */
+    opacity: 0.8; /* Slightly transparent */
+}
+
+/* Focus Effect */
+.search-bar:focus {
+    background: rgba(255, 255, 255, 0.1); /* Keep background consistent */
+    border-color: #7875a0e6; /* Subtle border color change on focus */
+}
+
+/* Icon Positioning */
+.search i {
+    position: absolute;
+    right: 18px; /* Slight adjustment to position the icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #e0e1e3; /* Icon color */
+    font-size: 1.2em; /* Icon size */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Hover effect on the icon */
+.search:hover i {
+    color: #7875a0e6; /* Keep this for icon hover, or remove if not desired */
+}
+
+/* Subtle hover effect on the search bar */
+.search:hover .search-bar {
+    border-color: #7875a0e6; /* Change border color on hover */
+    background: rgba(255, 255, 255, 0.1); /* Keep the background consistent on hover */
+}
+
+/* Card Styling */
+.cards-container {
+    width: 800px; /* Fixed width */
+    height: 500px; /* Fixed height */
+    perspective: 1000px; /* Enable 3D perspective */
+    margin: 35px auto;
+    position: relative; /* Positioning for the inner card */
+}
+
+.card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Preserve 3D effects */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Increased padding for larger content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Match header shadow */
+    display: flex; /* Flexbox for centering */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card:not(.active) {
+    visibility: hidden;
+}
+
+/* Adjust font size and padding for larger content */
+.artistName {
+    font-size: 40px; /* Larger artist name */
+    font-weight: bold;
+    margin-bottom: 10px; /* Increased margin */
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+.artistCreation {
+    font-size: 1.2rem; /* Larger creation date */
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+.ArtistPic {
+    display: flex; /* Center image */
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.ArtistPic img {
+    width: 150px; /* Increased image size */
+    height: 150px; /* Maintain aspect ratio */
+    border-radius: 50%; /* Rounded corners for images */
+}
+
+.Information {
+    text-align: center; /* Center text */
+    margin-top: 15px; /* Space above sections */
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+.Subheading {
+    text-align: center;
+    margin-bottom: 10px; /* Space below subheading */
+    font-size: 1.4rem; /* Larger subheading */
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+/* Combined Locations and Dates */
+#locanddate {
+    text-align: left; /* Align text to left for better readability */
+    font-size: 1.4rem; /* Increase text size */
+    background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+}
+
+.location-container {
+    display: flex; /* Align location and dates horizontally */
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    margin-bottom: 5px; /* Space between locations */
+}
+
+.location {
+    margin-right: 10px; /* Space between location and dates */
+}
+
+/* Each date item styling */
+.content {
+    width: 140px;
+    max-height: 200px; /* Limit the height to avoid excessive page overflow */
+    overflow-y: auto; /* Enable scrolling within the dropdown */
+    z-index: 10;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.content a {
+     background: linear-gradient(to right, #b8b8b8, #d8d8d8, #f5f5f5, #e0e0e0, #b8b8b8); /* Metallic gradient for underline */
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    padding: 5px 9px;
+    text-decoration: none;
+    display: inline-block;
+    width: 140px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    font-size: 1.4rem;
+}
+
+.content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera: Hide scrollbar */
+}
+
+/* Links styling */
+a {
+    color: inherit; /* Inherit text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.date-link.multiple {
+    cursor: pointer; /* Pointer cursor for multiple links */
+}
+
+.date-link.multiple:last-child {
+    cursor: default; 
+}
+
+.dots-container {
+    display: flex; /* Flex layout for the dots */
+    justify-content: center; /* Center the dots */
+    margin-top: 10px; /* Space above the dots */
+}
+
+.dot {
+    height: 10px; /* Height of the dot */
+    width: 10px; /* Width of the dot */
+    margin: 0 5px; /* Space between the dots */
+    border-radius: 50%; /* Circular dots */
+    background-color: #717171; /* Color for the active dot */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.dot.active {
+    background-color: #bbb; /* Default dot color */
+}
+
+#map {
+    height: 85%;
+    width: 85%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.cluster-div {
+    background-color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    color: #C5C6C7;
+    border: #C5C6C7;
+    box-shadow: 0 0 0px 4px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
